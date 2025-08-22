@@ -1,5 +1,7 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:mycustom_project/pages/home_screen_page.dart';
+import 'package:mycustom_project/components/customtitle_page.dart';
+import 'package:mycustom_project/components/list_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -14,6 +16,23 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.white,
+        items: [
+          Icon(Icons.home, size: 30, color: Colors.green),
+          Icon(Icons.wallet, size: 30, color: Colors.green),
+          Icon(
+            Icons.screen_lock_rotation_outlined,
+            size: 30,
+            color: Colors.green,
+          ),
+          Icon(Icons.person, size: 30, color: Colors.green),
+        ],
+        // animationDuration: Duration(milliseconds: 1000),
+        onTap: (index) {
+          //Handle button tap
+        },
+      ),
       extendBodyBehindAppBar: false,
       body: Container(
         decoration: BoxDecoration(
@@ -175,7 +194,7 @@ class _SignInPageState extends State<SignInPage> {
                           imgPath: 'lib/image/iconusd.png',
                           currencytitle: 'US Dollars',
                           color: Colors.green,
-                          cardbalance: "40,600.70",
+                          cardbalance: "\$40,600.70",
                           cardTitle: Colors.black,
                         ),
                         SizedBox(width: 10),
@@ -183,7 +202,7 @@ class _SignInPageState extends State<SignInPage> {
                           imgPath: 'lib/image/euroc.png',
                           currencytitle: 'EURO',
                           color: const Color.fromARGB(255, 248, 248, 248),
-                          cardbalance: "40,600.70",
+                          cardbalance: "€12,850.70",
                           cardTitle: Colors.black,
                         ),
                         SizedBox(width: 10),
@@ -191,7 +210,7 @@ class _SignInPageState extends State<SignInPage> {
                           imgPath: 'lib/image/ukflg.png',
                           currencytitle: 'POIND STERLING',
                           color: Colors.blue,
-                          cardbalance: "40,600.70",
+                          cardbalance: "£15,750.52",
                           cardTitle: Colors.black,
                         ),
                       ],
@@ -227,6 +246,37 @@ class _SignInPageState extends State<SignInPage> {
                 ),
 
                 //list of currency
+                Expanded(
+                  child: SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        ListPage(
+                          imgPath: 'lib/image/apple.png',
+                          balance: '-\$230.50',
+                          date: '2 Sep 03:02 PM',
+                          title: 'Apple Inc.',
+                        ),
+                        SizedBox(height: 20),
+                        ListPage(
+                          imgPath: 'lib/image/amazon.png',
+                          balance: '-\$130.50',
+                          date: '10 Sep 03:02 PM',
+                          title: 'Amazon.',
+                        ),
+                        SizedBox(height: 20),
+                        ListPage(
+                          imgPath: 'lib/image/tesla.png',
+                          balance: '-\$430.50',
+                          date: '2 Sep 03:02 PM',
+                          title: 'Tesla.',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
