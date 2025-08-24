@@ -11,24 +11,23 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  // final _controller = PageController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,
+        color: Colors.purple.shade700,
         items: [
-          Icon(Icons.home, size: 30, color: Colors.green),
-          Icon(Icons.wallet, size: 30, color: Colors.green),
+          Icon(Icons.home, size: 30, color: Colors.white),
+          Icon(Icons.wallet, size: 30, color: Colors.white),
           Icon(
             Icons.screen_lock_rotation_outlined,
             size: 30,
-            color: Colors.green,
+            color: Colors.white,
           ),
-          Icon(Icons.person, size: 30, color: Colors.green),
+          Icon(Icons.person, size: 30, color: Colors.white),
         ],
-        // animationDuration: Duration(milliseconds: 1000),
+        animationDuration: Duration(milliseconds: 500),
         onTap: (index) {
           //Handle button tap
         },
