@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -11,7 +13,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
+      backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -50,6 +52,27 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         borderRadius: BorderRadius.circular(6.5),
                       ),
                     ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              FilledButton(
+                onPressed: () {
+                  print('I Clicked You');
+                },
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    decorationThickness: 20,
+                  ),
+                ),
+                style: FilledButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  fixedSize: Size(500, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               ),
